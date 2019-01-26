@@ -30,6 +30,8 @@ Manage restaurant orders using blockchain technologies to increase speed and red
 
 ## How to set it up
 
+### Testing and Deployment
+
 Please ensure that you have Truffle version > 0.5.0 installed. If not, simply run:
 
 ```
@@ -49,3 +51,25 @@ compile
 migrate
 test
 ```
+
+At this point BiteChain should have passed all tests and has migrated to your development network.
+
+### Accessing the contract from the web
+
+Web design is not my stong suit and I can't quite grasp how to propperly use React. For the demo, I have a bare-bones proof of concept website that will show what foods are available, how much they cost, how many open orders there are, etc.
+
+Navigate to the `./react-app` folder and run `npm run start` This will launch a web server operation at `localhost:3000` Please navigate there with your browser.
+
+Missing components:
+
+- Dynamically rendering orders so that they move across the html table as they change state
+- Being able to propperly read order inputs in the order food section.
+
+Work arounds:
+
+- Ordering food is static, you will only be able to order 1 set thing for now. But it will be submitted to the blockchain and reflected in the Open Order Status section.
+- Open orders will just stay where they are in the table.
+
+Bonus:
+
+- ETH / USD price is pulled from an Oracle (WolframAlpa)
