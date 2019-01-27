@@ -9,7 +9,7 @@
 
 ## Customer Purchase
 
-- Dynamic arrays paramers for inputs isn't allowed yet so `customerSubmitOrder` has a static number of inputs, tableID, QTY1, QTY2, and QTY3 for the number of each item that a customer would like to order.
+- Dynamic arrays paramers for inputs isn't allowed yet so `customerSubmitOrder(unit, uint, uint, unit)` has a static number of inputs, tableID, QTY1, QTY2, and QTY3 for the number of each item that a customer would like to order.
 - On the Smart Contract side SafeMath helps with the order calculation to check if the customer paid the correct ammount.
 - If the circuit breaker is turned on, then no more orders will be able to be submitted.
 
