@@ -6,7 +6,7 @@ Allow your resturant to run 100% cashless! Utilizing BiteChain's smart contract 
 
 ### Future features (to-do)
 
-- Track store inventories and display only item that are available.
+- Track store inventories and display only items that are available.
 - Automate re-ordering of supplies based on how much is sold.
 - Customer loyalty system, award discounts to frequent visitors.
 - Implement Uport review system, like Yelp but with only verified purchases.
@@ -16,7 +16,7 @@ Allow your resturant to run 100% cashless! Utilizing BiteChain's smart contract 
 ### Benefits for everyone
 
 - Eco friendly by reducing paper waste from menus and receipts.
-- Customers, wait staff, cooks, and owners are able to view the status of any order at any time.
+- Customers, waiters, cooks, and owners are able to view the status of any order at any time.
 - Promotions / point cards can be linked to customer accounts (UPort), no more need to issue or save cards.
 
 ### Benefits for customers
@@ -78,6 +78,19 @@ Web design is not my strong suit and I can't quite grasp how to properly use Rea
 
 Navigate to the `./react-app` folder and run `npm run start` This will launch a web server operation at `localhost:3000` Please navigate there with your browser.
 
+From here, you can test making orders and modifying employee roles. There is also a copy of the contract running on Rinkeby network. Make sure that BiteChain.json is pointing to this address on Rinkby to try it out:
+
+```
+  "networks": {
+    "4": {
+      "events": {},
+      "links": {},
+      "address": "0x0A40eAeFd7Ad69E5E8b8307a33295019173b70Ec",
+      "transactionHash": "0xe86a358e179a638131ef68fbd17a750b7668b864d91e6dd1db4deec6908496f8"
+    },
+  }
+```
+
 Missing components:
 
 - Dynamically rendering orders so that they move across the html table as they change state
@@ -85,9 +98,13 @@ Missing components:
 
 Workarounds:
 
-- Ordering food is static, you will only be able to order 1 set thing for now. But it will be submitted to the blockchain and reflected in the Open Order Status section.
+- Ordering food is static, you will only be able to order one set thing for now. But it will be submitted to the blockchain and reflected in the Open Order Status section.
 - Open orders will just stay where they are in the table.
 
 Bonus:
 
 - ETH / USD price is pulled from an Oracle (WolframAlpa)
+
+```
+
+```

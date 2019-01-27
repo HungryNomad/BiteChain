@@ -60,11 +60,7 @@ contract BiteChain {
         require(waiters[msg.sender] == true, "Only an waiters can modify this");
         _;
     }
-    modifier isCustomer(){
-        require(custOpenOrders[msg.sender].length != 0, "No open orders found");
-        _;
-    }
-    
+
     /* Initialize Contract */
     /// @notice Initializing the contract
     /// @dev No starting paramaters needed
@@ -148,7 +144,10 @@ contract BiteChain {
     /// @param relativeID The customer relative order ID starting from 0
     /// @return ID The global order ID
     /// @return qty The number of orders that the customer has under thier address
-    function customerGetOpenOrders(uint relativeID) public view isCustomer returns(uint ID, uint qty){
+    function customerGetOpenOrders(uint relativeID) public view returns(uint ID, uint qty){
+        if (openOrders.length == 0){
+            return (0,0);
+        }
         return(custOpenOrders[msg.sender][relativeID], custOpenOrders[msg.sender].length);
     }
     
@@ -218,7 +217,7 @@ contract BiteChain {
     /// @notice Tells you the state of an odrer 0:Ordered 1:Approved 2:Cooking 3:Ready 4:Delivered
     /// @param orderID The ID of the order that is being looked up
     /// @return state The state of the order. 0:Ordered 1:Approved 2:Cooking 3:Ready 4:Delivered
-    function getOrderStatus(uint orderID) public view isCustomer returns(uint state){
+    function getOrderStatus(uint orderID) public view returns(uint state){
         require(orderID < orders.length, "ID is invalid.");
         return(uint(orders[orderID].state));
     }
@@ -227,6 +226,9 @@ contract BiteChain {
     /// @param orderID The ID of the order that is being looked up
     /// @return state The state of the order. 0:Ordered 1:Approved 2:Cooking 3:Ready 4:Delivered
     function getOpenOrders(uint relIndex) public view returns (uint ID, uint qty){
+        if (openOrders.length == 0){
+            return (0,0);
+            }
         require(relIndex < openOrders.length, "ID is invalid.");
         return(openOrders[relIndex],openOrders.length);
     }

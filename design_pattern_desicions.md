@@ -2,10 +2,10 @@
 
 ## Menu Layout
 
-- Eventually the menu will be dynamic created, allowing owners to add and remove menu items on the fly. In order to propperly display the items on a website or dapp we need to be able to get the length of the menu.
+- Eventually the menu will be dynamicly created, allowing owners to add and remove menu items on the fly. In order to properly display the items on a website or dapp we need to be able to get the length of the menu.
 - `getMenuLength` will return the menu's length for this reason.
 - At the moment the menu is statically created.
-- After the dapp gets the number of menu entries, then it can index through them 1 at a time to get the menu item name and item price using `getMenu(index)`. This avoids implementing loops to display unknown lengths of arrays.
+- After the dapp gets the number of menu entries, then it can index through them one at a time to get the menu item name and item price using `getMenu(index)`. This avoids implementing loops to display unknown lengths of arrays.
 
 ## Customer Purchase
 
@@ -38,9 +38,9 @@
 ## Order processing
 
 - The order's state is tracked in the `state` enum. 0-Ordrered, 1-Approved, 2-Cooking, 3-Ready, 4-Delivered.
-- After an order has been placed, the waiter must approved it with the `waiterApprove(ID)` only a waiter can do this.
+- After an order has been placed, the waiter must approve it with the `waiterApprove(ID)` only a waiter can do this.
 - Then a cook begins cooking and uses `cookStart(ID)` to set the state, then `cookFinish(ID)` when finished.
-- The Waiter's final step is to deliver the food and update the state with `waiterDeliver(ID)`
+- The waiter's final step is to deliver the food and update the state with `waiterDeliver(ID)`
 
 ## Roles
 
