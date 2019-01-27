@@ -1,0 +1,11 @@
+BiteChain is currently deployed on Rinkeby.
+Add this to your BiteChain.json to connect to my instance
+
+ "networks": {
+    "4": {
+      "events": {},
+      "links": {},
+      "address": "0x0A40eAeFd7Ad69E5E8b8307a33295019173b70Ec",
+      "transactionHash": "0xe86a358e179a638131ef68fbd17a750b7668b864d91e6dd1db4deec6908496f8"
+    },
+  }
