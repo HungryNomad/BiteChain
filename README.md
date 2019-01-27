@@ -15,7 +15,7 @@ Allow your resturant to run 100% cashless! Utilizing BiteChain's smart contract 
 
 ### Benefits for everyone
 
-- Eco friendly by reducing paper waste from menus and receipts
+- Eco friendly by reducing paper waste from menus and receipts.
 - Customers, wait staff, cooks, and owners are able to view the status of any order at any time.
 - Promotions / point cards can be linked to customer accounts (UPort), no more need to issue or save cards.
 
@@ -23,11 +23,11 @@ Allow your resturant to run 100% cashless! Utilizing BiteChain's smart contract 
 
 - Less chance of incorrect orders since the customer is the one submitting the order.
 - Customers can order at their leisure, they don't need to worry about staff coming too often or not often enough.
-- Speed! Orders are verified and then sent directly to the cook. This can shave off a few minutes from the ordering and delivery process
+- Speed! Orders are verified and then sent directly to the cook. This can shave off a few minutes from the ordering and delivery process.
 
 ### Benefits for owners
 
-- Owners can track many stores in real time
+- Owners can track many stores in real time.
 - Tracking inventories allows for optimized ordering.
 - Cashless stores reduces the risk of internal and external theft.
 
@@ -41,7 +41,7 @@ Please ensure that you have Truffle version > 0.5.0 installed. If not, simply ru
 npm install -g truffle
 ```
 
-To get started, clone or download the repository. Then open a new terminal and navigate to the downloaded project and run the following command
+To get started, clone or download the repository. Then open a new terminal and navigate to the downloaded project and run the following command:
 
 ```
 truffle develop
@@ -56,6 +56,21 @@ test
 ```
 
 At this point BiteChain should have passed all tests and has migrated to your development network.
+
+```
+truffle(develop)> test
+Using network 'develop'.
+
+Compiling .\contracts\SafeMath.sol...
+
+  Contract: TestBiteChain
+    √ Pulling Menu info (200ms)
+    √ Customer making an order (231ms)
+    √ Assigning Workers roles (417ms)
+    √ Check roles of workers (735ms)
+
+  4 passing (2s)
+```
 
 ### Accessing the contract from the web
 
