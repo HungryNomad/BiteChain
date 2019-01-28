@@ -104,7 +104,14 @@ Workarounds:
 Bonus:
 
 - ETH / USD price is pulled from an Oracle (WolframAlpa)
+- I was unable to figure out how to migrate the Oracle version with Truffle but I do have a working sample that can be tested with Remix on the Ropsten network
+- https://ropsten.etherscan.io/address/0xc0146bd9898224b60238d19a2692b06e8d5d6c80
 
-```
-
-```
+- Switch your MetaMask to Ropsten network, no ETH is needed, I have already funded the contract.
+- Navigate to: http://remix.ethereum.org/
+- Copy the contents of ./BiteChainOracle.sol and paste it into remix.
+- On the Run tab, connect to the existing contract at: 0xc0146Bd9898224b60238D19A2692b06E8d5d6C80
+- Click the `EthPrice` to see the last price of Eth/USD.
+- Click `update` to have the contract use the oracle and update the price.
+- Wait for 1 minute after your transation has been mined, then click `EthPrice` again.
+- This it my Oracle proof of concept.

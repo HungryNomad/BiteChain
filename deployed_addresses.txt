@@ -1,3 +1,6 @@
+Rinkeby - 0x0A40eAeFd7Ad69E5E8b8307a33295019173b70Ec
+https://rinkeby.etherscan.io/address/0x0a40eaefd7ad69e5e8b8307a33295019173b70ec
+
 BiteChain is currently deployed on Rinkeby.
 Add this to your BiteChain.json to connect to my instance
 
