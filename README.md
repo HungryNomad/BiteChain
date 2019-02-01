@@ -34,29 +34,22 @@ Allow your resturant to run 100% cashless! Utilizing BiteChain's smart contract 
 ## How to set it up
 
 ### Testing and Deployment
-
 Please ensure that you have Truffle version > 0.5.0 installed. If not, simply run:
-
 ```
 npm install -g truffle
 ```
-
-To get started, clone or download the repository. Then open a new terminal and navigate to the downloaded project and run the following command:
-
+To get started, clone or download the repository, open a new terminal and start ganache-cli with:
 ```
-truffle develop
+ganache-cli
 ```
+(Optional) If you wish to test on your local network, please note which port your truffle development is running on also copy your seed mnemonics down for later. Alternatively, there is a copy of this contact running on Rinkeby network that you can play around with.
 
-(Optional) If you wish to test on your local network, please note which port your truffle development is running on also copy your seed mnemonics down for later. Alternatively, there is a copy of this contact running on Ropsten network that you can play around with. Back to the truffle(develop) window:
-
+In a new terminal, navigate to the downloaded project and run the following command:
 ```
-compile
-migrate
-test
+cd final-project-Nanoshi
+truffle test
 ```
-
 At this point BiteChain should have passed all tests and has migrated to your development network.
-
 ```
 truffle(develop)> test
 Using network 'develop'.
@@ -71,12 +64,21 @@ Compiling .\contracts\SafeMath.sol...
 
   4 passing (2s)
 ```
+If that runs successfully, it's then the contract can deployed with:
+```
+truffle compile
+truffle migrate
+```
+To get the web interface up and running, within the same directory run these commands:
+```
+npm install
+npm run start
+```
+Browse to localhost:3000 and set your Metamask to Rinkeby to interact with live contract or to localhost:8545 for testing on the development network.
 
 ### Accessing the contract from the web
 
 Web design is not my strong suit and I can't quite grasp how to properly use React. For the demo, I have a bare-bones proof of concept website that will show what foods are available, how much they cost, how many open orders there are, etc.
-
-Navigate to the `./react-app` folder and run `npm run start` This will launch a web server operation at `localhost:3000` Please navigate there with your browser.
 
 From here, you can test making orders and modifying employee roles. There is also a copy of the contract running on Rinkeby network. Make sure that BiteChain.json is pointing to this address on Rinkby to try it out:
 
