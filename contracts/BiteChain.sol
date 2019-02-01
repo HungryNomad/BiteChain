@@ -97,7 +97,7 @@ contract BiteChain {
     
     /// @notice Submit order with tablie ID and quantity of each item requested. Payable
     /// @dev The order will be checked to ensure that that correct ammount has been paid
-    /// @param tableID The ID of the Table, where the food should be sent
+    /// @param table The ID of the Table, where the food should be sent
     /// @param qty0 How many orders of food from menu index 0
     /// @param qty1 How many orders of food from menu index 1
     /// @param qty2 How many orders of food from menu index 2
@@ -223,7 +223,7 @@ contract BiteChain {
     }
 
     /// @notice Tells you the state of an odrer 0:Ordered 1:Approved 2:Cooking 3:Ready 4:Delivered
-    /// @param orderID The ID of the order that is being looked up
+    /// @param relIndex The ID of the order that is being looked up
     /// @return state The state of the order. 0:Ordered 1:Approved 2:Cooking 3:Ready 4:Delivered
     function getOpenOrders(uint relIndex) public view returns (uint ID, uint qty){
         if (openOrders.length == 0){
@@ -241,14 +241,14 @@ contract BiteChain {
         return(true);
     }
     /// @notice Adds the role of Waiter to the specified address
-    /// @param addWaiter The address of the new Waiter
+    /// @param waiterAddress The address of the new Waiter
     /// @return success true if the address was promoted to the new role 
     function  addWaiter(address waiterAddress) public returns (bool success){
         waiters[waiterAddress] = true;
         return(true);
     }
     /// @notice Adds the role of Cook to the specified address
-    /// @param addCook The address of the new Cook
+    /// @param cookAddress The address of the new Cook
     /// @return success true if the address was promoted to the new role 
     function  addCook(address cookAddress) public returns (bool success){
         cooks[cookAddress] = true;
@@ -298,8 +298,7 @@ contract BiteChain {
     }
 
     /// @notice Checks to see if the requested address is a waiter
-    /// @param queryAddress The address that you want to confirm
-    /// @return success true if address is a member of waiters
+    /// @param withdrawAmount The ammount that you want to withdrawl
     function withdraw(uint withdrawAmount) public isOwner {
         require (address(this).balance >= withdrawAmount, "Requested more money than the contract has.");
         msg.sender.transfer(withdrawAmount);
