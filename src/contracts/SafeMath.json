@@ -1,14 +1,14 @@
 {
   "contractName": "SafeMath",
   "abi": [],
-  "bytecode": "0x604c602c600b82828239805160001a60731460008114601c57601e565bfe5b5030600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea165627a7a72305820d9b908b358004272f9f7b59664c3874e150f0defddb24b39838664baf2a5032c0029",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea165627a7a72305820d9b908b358004272f9f7b59664c3874e150f0defddb24b39838664baf2a5032c0029",
+  "bytecode": "0x604c602c600b82828239805160001a60731460008114601c57601e565bfe5b5030600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea165627a7a7230582067ee33b20fbef53a099db5ad5c579caee9ed3386d4083637ec92aeeb8a5fa37a0029",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea165627a7a7230582067ee33b20fbef53a099db5ad5c579caee9ed3386d4083637ec92aeeb8a5fa37a0029",
   "sourceMap": "131:1931:2:-;;132:2:-1;166:7;155:9;146:7;137:37;252:7;246:14;243:1;238:23;232:4;229:33;270:1;265:20;;;;222:63;;265:20;274:9;222:63;;298:9;295:1;288:20;328:4;319:7;311:22;352:7;343;336:24",
   "deployedSourceMap": "131:1931:2:-;;;;;;;;",
   "source": "pragma solidity ^0.5.0;\r\n\r\n/**\r\n * @title SafeMath\r\n * @dev Unsigned math operations with safety checks that revert on error\r\n */\r\nlibrary SafeMath {\r\n    /**\r\n     * @dev Multiplies two unsigned integers, reverts on overflow.\r\n     */\r\n    function mul(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        // Gas optimization: this is cheaper than requiring 'a' not being zero, but the\r\n        // benefit is lost if 'b' is also tested.\r\n        // See: https://github.com/OpenZeppelin/openzeppelin-solidity/pull/522\r\n        if (a == 0) {\r\n            return 0;\r\n        }\r\n\r\n        uint256 c = a * b;\r\n        require(c / a == b,\"Possible overflow detected\");\r\n\r\n        return c;\r\n    }\r\n\r\n    /**\r\n     * @dev Integer division of two unsigned integers truncating the quotient, reverts on division by zero.\r\n     */\r\n    function div(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        // Solidity only automatically asserts when dividing by 0\r\n        require(b > 0,\"Cannot divide by zero\");\r\n        uint256 c = a / b;\r\n        // assert(a == b * c + a % b); // There is no case in which this doesn't hold\r\n\r\n        return c;\r\n    }\r\n\r\n    /**\r\n     * @dev Subtracts two unsigned integers, reverts on overflow (i.e. if subtrahend is greater than minuend).\r\n     */\r\n    function sub(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        require(b <= a,\"Possible overflow detected\");\r\n        uint256 c = a - b;\r\n\r\n        return c;\r\n    }\r\n\r\n    /**\r\n     * @dev Adds two unsigned integers, reverts on overflow.\r\n     */\r\n    function add(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        uint256 c = a + b;\r\n        require(c >= a,\"Possible overflow detected\");\r\n\r\n        return c;\r\n    }\r\n\r\n    /**\r\n     * @dev Divides two unsigned integers and returns the remainder (unsigned integer modulo),\r\n     * reverts when dividing by zero.\r\n     */\r\n    function mod(uint256 a, uint256 b) internal pure returns (uint256) {\r\n        require(b != 0,\"Cannont divide by zero\");\r\n        return a % b;\r\n    }\r\n}",
-  "sourcePath": "C:\\Users\\Ace\\Documents\\GitHub\\BiteChainv3\\contracts\\SafeMath.sol",
+  "sourcePath": "C:\\Users\\Ace\\Documents\\GitHub\\final-project-Nanoshi\\contracts\\SafeMath.sol",
   "ast": {
-    "absolutePath": "/C/Users/Ace/Documents/GitHub/BiteChainv3/contracts/SafeMath.sol",
+    "absolutePath": "/C/Users/Ace/Documents/GitHub/final-project-Nanoshi/contracts/SafeMath.sol",
     "exportedSymbols": {
       "SafeMath": [
         1105
@@ -1749,7 +1749,7 @@
     "src": "0:2062:2"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/Ace/Documents/GitHub/BiteChainv3/contracts/SafeMath.sol",
+    "absolutePath": "/C/Users/Ace/Documents/GitHub/final-project-Nanoshi/contracts/SafeMath.sol",
     "exportedSymbols": {
       "SafeMath": [
         1105
@@ -3504,11 +3504,11 @@
       "events": {},
       "links": {},
       "address": "0xE25796e8af6D893f2dE47D06E67B9eD99B7f571A",
-      "transactionHash": "0xce9322198e2dd9659411f625d0219a6533351b16a92be1fe1ded15541efd8b83"
+      "transactionHash": "0x5c86dc76064646786a6b1166e6365dfc7053bceb39c091717e0101767451e34c"
     }
   },
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-01-27T17:27:41.803Z",
+  "updatedAt": "2019-02-01T22:27:49.420Z",
   "devdoc": {
     "details": "Unsigned math operations with safety checks that revert on error\r",
     "methods": {},
