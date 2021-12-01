@@ -46,7 +46,7 @@ ganache-cli
 
 In a new terminal, navigate to the downloaded project and run the following command:
 ```
-cd final-project-Nanoshi
+cd BiteChain
 truffle test
 ```
 At this point BiteChain should have passed all tests and has migrated to your development network.
